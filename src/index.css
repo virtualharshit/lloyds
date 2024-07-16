@@ -21,3 +21,163 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
+.h-screen {
+  height: 100vh; /* Full viewport height */
+}
+
+.w-screen {
+  width: 100vw; /* Full viewport width */
+}
+
+.flex {
+  display: flex;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.p-2 {
+  padding: 0.5rem; /* 8px */
+}
+
+.border-r {
+  border-right: 1px solid #e5e7eb;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-4 {
+  gap: 1rem; /* 16px */
+}
+
+.text-green-700 {
+  color: #047857; /* This is the hex value for text-green-700 */
+}
+
+.text-xl {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.h-50px {
+  height: 50px;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.w-20 {
+  width: 20%; /* 20% of the parent width */
+}
+.w-80 {
+  width: 80%; /* 20% of the parent width */
+}
+
+.w-full {
+  width: 100%; /* Full width */
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.bg-green-800 {
+  background-color: #065f46;
+}
+
+.text-lg {
+  font-size: 1.125rem; /* 18px */
+}
+
+.rounded-lg {
+  border-radius: 0.5rem; /* 8px */
+}
+
+.w-80 {
+  width: 80%; /* 80% of the parent width */
+}
+
+.h-full {
+  height: 100%; /* Full height */
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+
+.p-6 {
+  padding: 1.5rem; /* 24px */
+  width: 100%;
+}
+
+.border-b-2 {
+  border-bottom: 2px; /* 2px */
+}
+
+.border-black {
+  border-color: #000000; /* Black color */
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-2xl {
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem; /* 32px */
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 equal columns */
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr)); /* 3 equal rows */
+}
+
+.gap-6 {
+  gap: 1.5rem; /* 24px */
+}
+
+.shadow-0_0_5px_00000070 {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); /* Shadow effect */
+}
+
+.rounded-lg {
+  border-radius: 0.5rem; /* 8px */
+}
+
+.bg-slate-100 {
+  background-color: #c4cbd8; /* Slate color */
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.overflow-y-scroll{
+  overflow-y: scroll;
+}

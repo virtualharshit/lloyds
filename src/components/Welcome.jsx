@@ -16,40 +16,40 @@ const Welcome = () => {
         Welcome
       </div>
       <div className="grid grid-cols-3 grid-rows-3 gap-6 p-4">
-        <div className="p-4 flex items-center justify-center bg-white shadow-[0_0_5px_#00000070] rounded-lg bg-slate-100">
-          <img src={Github} alt="" />
+        <div className="p-4 flex items-center justify-center shadow-0_0_5px_00000070 rounded-lg bg-slate-100">
+          <img src={Github} className="w-full" alt="" />
         </div>
 
-        <div className="p-4 flex items-center justify-center shadow-[0_0_5px_#00000070] rounded-lg bg-slate-100">
-          <img src={Jenkins} alt="" />
+        <div className="p-4 flex items-center justify-center shadow-0_0_5px_00000070 rounded-lg bg-slate-100">
+          <img src={Jenkins} className="w-full" alt="" />
         </div>
 
-        <div className="p-4 flex items-center justify-center shadow-[0_0_5px_#00000070] rounded-lg bg-slate-100">
-          <img src={Azure} alt="" />
+        <div className="p-4 flex items-center justify-center shadow-0_0_5px_00000070 rounded-lg bg-slate-100">
+          <img src={Azure} className="w-full" alt="" />
         </div>
 
-        <div className="p-4 flex items-center justify-center shadow-[0_0_5px_#00000070] rounded-lg bg-slate-100">
-          <img src={Cloudflare} alt="" />
+        <div className="p-4 flex items-center justify-center shadow-0_0_5px_00000070 rounded-lg bg-slate-100">
+          <img src={Cloudflare} className="w-full" alt="" />
         </div>
 
-        <div className="p-4 flex items-center justify-center shadow-[0_0_5px_#00000070] rounded-lg bg-slate-100">
-          <img src={Cyberark} alt="" />
+        <div className="p-4 flex items-center justify-center shadow-0_0_5px_00000070 rounded-lg bg-slate-100">
+          <img src={Cyberark} className="w-full" alt="" />
         </div>
 
-        <div className="p-4 flex items-center justify-center shadow-[0_0_5px_#00000070] rounded-lg bg-slate-100">
-          <img src={Docker} alt="" />
+        <div className="p-4 flex items-center justify-center shadow-0_0_5px_00000070 rounded-lg bg-slate-100">
+          <img src={Docker} className="w-full" alt="" />
         </div>
 
-        <div className="p-4 flex items-center justify-center shadow-[0_0_5px_#00000070] rounded-lg bg-slate-100">
-          <img src={Urbancode} alt="" />
+        <div className="p-4 flex items-center justify-center shadow-0_0_5px_00000070 rounded-lg bg-slate-100">
+          <img src={Urbancode} className="w-full" alt="" />
         </div>
 
-        <div className="p-4 flex items-center justify-center shadow-[0_0_5px_#00000070] rounded-lg bg-slate-100">
-          <img src={Aws} alt="" />
+        <div className="p-4 flex items-center justify-center shadow-0_0_5px_00000070 rounded-lg bg-slate-100">
+          <img src={Aws} className="w-full" alt="" />
         </div>
 
-        <div className="p-4 flex items-center justify-center shadow-[0_0_5px_#00000070] rounded-lg bg-slate-100">
-          <img src={Zegocloud} alt="" />
+        <div className="p-4 flex items-center justify-center shadow-0_0_5px_00000070 rounded-lg bg-slate-100">
+          <img src={Zegocloud} className="w-full" alt="" />
         </div>
       </div>
     </div>
