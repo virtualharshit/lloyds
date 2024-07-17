@@ -2,9 +2,21 @@ import React, { useState } from "react";
 import "./onboarding.css";
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
+import { useEffect } from "react";
 
-const ChecklistItem = ({ title, link, linkText, info, extraInfo }) => {
+const ChecklistItem = ({
+  index,
+  pindex,
+  title,
+  link,
+  linkText,
+  info,
+  extraInfo,
+  data,
+  setdata,
+}) => {
   const [isopen, setisopen] = useState(false);
+
   const [click, setclick] = useState(false);
 
   return (
@@ -13,10 +25,14 @@ const ChecklistItem = ({ title, link, linkText, info, extraInfo }) => {
         type="checkbox"
         className="checkbox #existingboolean"
         onChange={(e) => {
-          console.log(e);
+          let existingdata = data;
+          existingdata[pindex][index] = e.target.checked ? 1 : 0;
+          setdata(existingdata);
+
+          // console.log(e.target.checked, pindex, index);
         }}
       />
-      <label htmlFor="" className="checkbox #existing"></label>
+      {/* <label htmlFor="" className="checkbox #existing"></label> */}
       <span
         className="checklist-item__title"
         onClick={() => setisopen(!isopen)}
@@ -67,17 +83,46 @@ const ChecklistItem = ({ title, link, linkText, info, extraInfo }) => {
   );
 };
 
-const Checklist = ({ title, items, dotClass }) => {
+const Checklist = ({ index, title, items, dotClass, data, setdata }) => {
+  const [percentage, setpercentage] = useState(0);
+
+  // const handlepercentage = () => {
+  //   const percentage = data[index]?.reduce(
+  //     (total, obj) => (obj ? total + obj : total),
+  //     0
+  //   );
+  //   console.log((percentage / data[index]?.length) * 100);
+  //   return (percentage / data[index]?.length) * 100;
+  // };
+
+  useEffect(() => {
+    console.log("wfe");
+    console.log(data);
+  }, [data]);
+
   return (
     <section className="checklist">
-      <span className={dotClass}>
+      <div className="flex gap-2">
+        <span className={dotClass}></span>
         <h2 className="checklist__title">{title}</h2>
-      </span>
+      </div>
+
       <span className="checklist__title-border"></span>
-      <span className="checklist__percentage-border"></span>
+      <span
+        className={`checklist__percentage-border  ${
+          percentage ? `w-[${percentage}%]` : "w-0"
+        } `}
+      ></span>
       <ul className="checklist-container">
-        {items.map((item, index) => (
-          <ChecklistItem key={index} {...item} />
+        {items.map((item, i) => (
+          <ChecklistItem
+            key={i}
+            index={i}
+            pindex={index}
+            {...item}
+            data={data}
+            setdata={setdata}
+          />
         ))}
       </ul>
     </section>
@@ -85,15 +130,27 @@ const Checklist = ({ title, items, dotClass }) => {
 };
 
 const Onboarding = () => {
-  const [isExisting, setIsExisting] = useState(false);
+  const [isExistingEngineer, setIsExistingEngineer] = useState(false);
+  const [progressCount, setProgressCount] = useState(0);
+  const totalTasks = 5;
 
-  const existingUpdate = (value) => {
-    setIsExisting(value);
+  const handleRadioChange = (isExisting) => {
+    setIsExistingEngineer(isExisting);
+    // existing_update(isExisting); // Assuming `existing_update` is a global function, otherwise import it or define it in this file
   };
 
   const handleReset = () => {
-    // Add your reset logic here
+    // Reset logic here
+    setProgressCount(0);
   };
+
+  const [data, setdata] = useState([
+    [0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+  ]);
 
   const accountItems = [
     {
@@ -260,30 +317,84 @@ const Onboarding = () => {
   ];
 
   return (
-    <div className="wrapper flex flex-wrap gap-4">
-      <Checklist
-        title="Accounts"
-        items={accountItems}
-        dotClass="dot_accounts"
-      />
-      <Checklist title="Laptop" items={laptopItems} dotClass="dot_laptops" />
-      <Checklist
-        title="Groups/Roles"
-        items={groupsItems}
-        dotClass="dot_groups"
-      />
-      <Checklist
-        title="Channels/Dashboards"
-        items={channelsItems}
-        dotClass="dot_channels"
-      />
-      <Checklist
-        title="Enviroment Access/Training"
-        items={trainingItems}
-        dotClass="dot_trainings"
-      />
+    <div>
+      {/* <header>
+        <div className="maintenance-section-h1">
+          <label style={{ alignItems: "center", margin: "auto" }}>
+            <div className="control-group">
+              <label className="control control-radio">
+                New Engineer
+                <input
+                  type="radio"
+                  name="radio"
+                  onChange={() => handleRadioChange(false)}
+                  checked={!isExistingEngineer}
+                />
+                <div className="control_indicator"></div>
+              </label>
+              <label className="control control-radio">
+                Existing Engineer
+                <input
+                  type="radio"
+                  name="radio"
+                  id="existing_radio"
+                  onChange={() => handleRadioChange(true)}
+                  checked={isExistingEngineer}
+                />
+                <div className="control_indicator"></div>
+              </label>
+            </div>
+          </label>
+        </div>
+      </header> */}
+      <h2 className="title bg-slate-200 p-2">
+        CAT Software Engineers Onboarding
+      </h2>
+      <div className="wrapper grid grid-cols-2 gap-4">
+        <Checklist
+          index={0}
+          title="Accounts"
+          items={accountItems}
+          dotClass="dot_accounts"
+          data={data}
+          setdata={setdata}
+        />
+        <Checklist
+          index={1}
+          title="Laptop"
+          items={laptopItems}
+          dotClass="dot_laptops"
+          data={data}
+          setdata={setdata}
+        />
+        <Checklist
+          index={2}
+          title="Groups/Roles"
+          items={groupsItems}
+          dotClass="dot_groups"
+          data={data}
+          setdata={setdata}
+        />
+        <Checklist
+          index={3}
+          title="Channels/Dashboards"
+          items={channelsItems}
+          dotClass="dot_channels"
+          data={data}
+          setdata={setdata}
+        />
+        <Checklist
+          index={4}
+          title="Enviroment Access/Training"
+          items={trainingItems}
+          dotClass="dot_trainings"
+          data={data}
+          setdata={setdata}
+        />
 
-      {/* <div class="container">
+        <div></div>
+
+        {/* <div class="container">
         <section class="checklist">
           <span class="dot_accounts">
             <h2 class="checklist__title">Accounts</h2>
@@ -1049,6 +1160,7 @@ const Onboarding = () => {
           </ul>
         </section>
       </div> */}
+      </div>
     </div>
   );
 };

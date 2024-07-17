@@ -144,7 +144,7 @@ a:hover {
 .title {
     font-size: 26px;
     font-weight: 500;
-    margin: 0 .2em 1em;
+    margin: 2rem 0.2em;
     text-align: center;
 }
 
@@ -154,7 +154,8 @@ a:hover {
 }
 
 .progress {
-    margin-bottom: 5px;
+    height: auto;
+    margin-bottom: 15px;
     text-align: center;
 }
 
@@ -181,7 +182,7 @@ a:hover {
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
     letter-spacing: .025em;
-    color: inherit;
+    color: white;
     border: 1px solid #57d490;
     border-radius: 3px;
     outline: 0;
@@ -272,14 +273,13 @@ a:hover {
     margin: 0;
     display: flex;
     font-size: 22px;
-    margin-left: 40px;
 
 }
 
 
 .checklist__title-border {
     display: block;
-    width: 350px;
+    /* width: 350px; */
     margin-top: 8px;
     border-bottom: 2px solid #57d490;
     -webkit-box-shadow: 0 15px 15px -15px rgba(33, 16, 118, .5);
@@ -288,15 +288,15 @@ a:hover {
 
 .checklist__percentage-border {
     display: block;
-    width: 350px;
+    /* width: 350px; */
     height: 6px;
     margin-bottom: 8px;
     -webkit-transition: -webkit-transform 350ms ease;
     transition: -webkit-transform 350ms ease;
     transition: transform 350ms ease;
     transition: transform 350ms ease, -webkit-transform 350ms ease;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
+    /* -webkit-transform: scaleX(0); */
+    /* transform: scaleX(0); */
     -webkit-transform-origin: left;
     transform-origin: left;
     background: #57d490;
@@ -357,9 +357,9 @@ a:hover {
     color: #dcdcdc;
 }
 
-input[type=checkbox] {
+/* input[type=checkbox] {
     display: none;
-}
+} */
 
 input[type=checkbox]:checked~.checkbox {
     -webkit-animation: wiggle .4s ease;
