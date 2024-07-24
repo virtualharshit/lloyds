@@ -4,7 +4,7 @@ import ProfileImg from "../assets/profile.png";
 
 const Profile = () => {
   return (
-    <div>
+    <div className="p-4">
       <div className="border-b-2 border-black text-2xl font-bold mb-4">
         Profile
       </div>

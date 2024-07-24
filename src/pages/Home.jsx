@@ -7,58 +7,68 @@ import Logo from "../assets/logo1.png";
 import Welcome from "../components/Welcome";
 import Onboarding from "../components/Onboarding";
 import Profile from "../components/Profile";
+import { useNavigate } from "react-router-dom";
 // import Onboarding from "../components/Onboarding";
 
 const Home = () => {
   const [menu, setmenu] = useState(0);
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/login");
+  };
+
   return (
     <div className="h-screen w-screen flex">
-      <div className="w-20 border-r flex flex-col justify-between items-start p-2">
+      <div className="w-[10%] border-r flex flex-col justify-between items-start bg-[#045634] ">
         <div className="w-full flex flex-col gap-4">
-          <div className="p-4 text-green-700 text-xl font-bold">
+          <div className="p-1 text-green-700 text-xl w-full bg-[#044027] font-bold">
             <img src={Logo} className="h-50px " alt="" />
           </div>
 
-          <div className="flex flex-col font-bold">
+          <div className="flex flex-col font-bold text-sm  text-white">
             <div
-              className={`flex gap-2 items-center p-4  ${
-                menu === 0 ? "text-white bg-green-800" : "text-black"
+              className={`flex gap-2 items-center text-white p-3  ${
+                menu === 0 ? " bg-[#044027]" : "hover:bg-[#054b2e]"
               } `}
               onClick={() => setmenu(0)}
             >
               {" "}
-              <IoHome />
+              {/* <IoHome className="text-white text-lg" /> */}
               Home{" "}
             </div>
             <div
-              className={`flex gap-2 items-center p-4  ${
-                menu === 1 ? "text-white bg-green-800" : "text-black"
+              className={`flex gap-2 items-center text-white p-3  ${
+                menu === 1 ? " bg-[#044027]" : " hover:bg-[#054b2e]"
               } `}
               onClick={() => setmenu(1)}
             >
               {" "}
-              <FaUserAlt />
+              {/* <FaUserAlt className="text-white text-lg" /> */}
               Profile{" "}
             </div>
             <div
-              className={`flex gap-2 items-center p-4  ${
-                menu === 2 ? "text-white bg-green-800" : "text-black"
+              className={`flex gap-2 items-center text-white p-3  ${
+                menu === 2 ? " bg-[#044027]" : "hover:bg-[#054b2e]"
               } `}
               onClick={() => setmenu(2)}
             >
-              {" "}
-              <FaUsersRectangle />
+              {/* <FaUsersRectangle className="text-white text-lg" /> */}
               Colleague Onboarding
             </div>
           </div>
         </div>
         <div className="flex justify-center w-full">
-          <button className="flex gap-2 items-center justify-center bg-green-800 w-80 p-2 text-white text-lg rounded-lg">
+          <button
+            className="flex gap-2 items-center justify-center bg-green-700 w-80 p-2 my-2 text-white text-lg rounded-lg"
+            onClick={() => handleLogout()}
+          >
             Logout <IoMdLogOut />
           </button>
         </div>
       </div>
-      <div className=" h-full w-80 overflow-y-scroll p-4">
+      <div className=" h-full w-[90%] overflow-y-auto">
         {menu === 0 && <Welcome />}
         {menu === 1 && <Profile />}
 

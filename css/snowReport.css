@@ -1,0 +1,141 @@
+:root{
+    --bs-card-bg: 
+}
+
+body{
+    background-color: #414141;
+
+}
+
+#Table{
+    table-layout: fixed;
+    overflow: scroll;
+}
+
+#Table th,
+#Table td {
+    border-color: green;
+    border-radius: 5px;
+    border: 2px solid;
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    text-align: left;   
+    background-color: F5F5F5;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    
+    width: 1000px;
+}
+
+#serverSearch{
+    padding: 12px 20px 12px;
+    font-size: 20px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+}
+
+#filterModal{
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    background-color: #fff;
+    width: 500px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #000;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+#filterButton{
+    padding: 12px 20px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+    cursor: pointer;
+}
+
+#envSearch{
+    padding: 12px 20px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+    cursor: pointer;
+}
+
+#osSearch{
+    padding: 12px 20px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+    cursor: pointer;
+}
+
+#patchSearch{
+    padding: 12px 20px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+    cursor: pointer;
+}
+
+#applyFilter{
+    padding: 12px 20px 12px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#selectAllFilters{
+    padding: 12px 20px 12px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#clearAllFilters{
+    padding: 12px 20px 12px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#closeModal{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#filterForm {
+    column-count: 2; /* number of columns */
+}
+
+.checkbox-pair {
+    display: block; /* each checkbox on a new line */
+    margin-bottom: 10px; /* space between checkboxes */
+    text-align: left;
+}
