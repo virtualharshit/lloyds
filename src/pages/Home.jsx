@@ -5,10 +5,9 @@ import { FaUserAlt } from "react-icons/fa";
 import { FaUsersRectangle } from "react-icons/fa6";
 import Logo from "../assets/logo1.png";
 import Welcome from "../components/Welcome";
-import Onboarding from "../components/Onboarding";
 import Profile from "../components/Profile";
 import { useNavigate } from "react-router-dom";
-// import Onboarding from "../components/Onboarding";
+import Onboarding from "../components/Onboarding/Onboarding";
 
 const Home = () => {
   const [menu, setmenu] = useState(0);
@@ -68,10 +67,9 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div className=" h-full w-[90%] overflow-y-auto">
+      <div className=" h-full w-[90%] overflow-y-auto relative">
         {menu === 0 && <Welcome />}
         {menu === 1 && <Profile />}
-
         {menu === 2 && <Onboarding />}
       </div>
     </div>
